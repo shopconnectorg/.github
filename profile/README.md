@@ -1,14 +1,14 @@
 # ShopConnect 🛒⚡
 
 ## Introduction
-Personalized eCommerce powered by ZKP, utilizing a novel Proof-of-Purchase system using Polygon ID. Future work would include using Sismo for custom data attestation, and Safe for a complete account abstraction UX.
+Personalized eCommerce powered by ZKP, implementing a novel Proof-of-Purchase system based on Polygon ID. Future work would include using Sismo for custom data attestation, and Safe for a complete account abstraction UX.
 
 ## Technology & Components
 1) ShopConnect Extension:  
-This is a Chrome extension wrapped around Polygon ID. We've based it on the original Polygon ID extension, and converted it into a smooth onboarding flow for eCommerce customers to quickly unlock personalized deals. This extension stores the user's proofs of purchase privately, and shares only proofs for eligible promotions.
+This is a Chrome extension based it on the original Polygon ID Chrome extension. We converted it into a smooth onboarding flow for eCommerce customers to quickly unlock personalized deals. This extension stores the user's proofs of purchase privately, and emits ZK proofs for eligible promotions.
 
 2) ShopConnect Plugin:  
-It is designed to integrate ShopConnect with different e-commerce platforms, providing both interacction with the platform's backend and the browser extension. We have implemented as part of the same codebase as the store, for simplicity, but could be made into it's own plugin that could interact with Shopify, WooCommerce and other e-commerce platforms. It consists of frontend code, that interacts with the extension and the store's backend, and backend code that adds ShopConnect-specific endpoints.
+It is designed to integrate ShopConnect with different e-commerce platforms, providing both interacction with the platform's backend and the browser extension. For simplicity, we have implemented as part of the same codebase as the store, but could be made into it's own plugin that could interact with Shopify, WooCommerce and other e-commerce platforms. It consists of frontend code, that interacts with the extension and the store's backend, and backend code that adds ShopConnect-specific endpoints.
 
 3) ShopConnect API:
 This backend server exposes endpoints that connect the extension, backend, and stores together. All requests to issue new Verifiable Credentials are made through the API, and requests to verify credentials in a user's wallet are also made through the API. ShopConnect operates an Issuer Node on the backend, allowing it to issue VCs whenever a purchase is made.
